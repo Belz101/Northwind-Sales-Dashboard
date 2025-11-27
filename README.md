@@ -72,6 +72,7 @@ Screenshot of Canvas:
 ---
 
 **Author:** Belaboh Gideon 
+---
 **Portfolio:** https://github.com/Belz101
 
 
