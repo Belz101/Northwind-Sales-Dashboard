@@ -58,7 +58,7 @@ Data Source: https://www.kaggle.com/datasets/jeetahirwar/northwind-traders
 - **Year-over-Year revenue growth:** 12%  
 
 Screenshot of Canvas:
-<img width="1153" height="652" alt="image" src="https://github.com/user-attachments/assets/483bdea6-bd65-41dd-80eb-4b392948ef7a" />
+<img width="800" height="450" alt="image" src="https://github.com/user-attachments/assets/483bdea6-bd65-41dd-80eb-4b392948ef7a" />
 
 ---
 
@@ -72,6 +72,6 @@ Screenshot of Canvas:
 ---
 
 **Author:** Belaboh Gideon 
-**Portfolio:** 
+**Portfolio:** https://github.com/Belz101
 
 
