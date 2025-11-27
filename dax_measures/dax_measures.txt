@@ -1,0 +1,72 @@
+==========================
+📌 NORTHWIND — DAX MEASURES
+==========================
+
+-- 1. Total Sales
+Total Sales =
+SUMX (
+    'Order Details',
+    'Order Details'[UnitPrice] * 'Order Details'[Quantity]
+)
+
+-- 2.  Total Orders
+Total Orders =
+DISTINCTCOUNT('Orders'[OrderID])
+
+-- 3.  Total Customers
+Total Customers =
+DISTINCTCOUNT('Customers'[CustomerID])
+
+-- 4.  Avg Order Value (AOV)
+AOV =
+DIVIDE([Total Sales], [Total Orders])
+
+-- 5. Total Quantity Sold
+Total Quantity =
+SUM('Order Details'[Quantity])
+
+-- 6.  Sales by Category (for charts)
+Sales by Category =
+CALCULATE(
+    [Total Sales],
+    ALL('Categories')
+)
+
+-- 7.  Sales by Country (if used)
+Sales by Country =
+CALCULATE(
+    [Total Sales],
+    ALL('Customers'[Country])
+)
+
+-- 8.  Top Customer Spend (for cards or ranking)
+Top Customer Spend =
+MAXX(
+    SUMMARIZE(
+        'Customers',
+        'Customers'[CompanyName],
+        "CustomerSales", [Total Sales]
+    ),
+    [CustomerSales]
+)
+
+-- 9.  Total Products
+Total Products =
+DISTINCTCOUNT('Products'[ProductID])
+
+-- 10.  Gross Profit (optional depending on your dataset)
+-- If you imported Discount:
+Gross Profit =
+SUMX(
+    'Order Details',
+    ('Order Details'[UnitPrice] * (1 - 'Order Details'[Discount])) *
+    'Order Details'[Quantity]
+)
+
+-- 11.  Discount Amount (optional)
+Discount Amount =
+SUMX(
+    'Order Details',
+    ('Order Details'[UnitPrice] * 'Order Details'[Quantity]) *
+    'Order Details'[Discount]
+)
