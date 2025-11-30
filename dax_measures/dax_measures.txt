@@ -1,5 +1,5 @@
 ==========================
-📌 NORTHWIND — DAX MEASURES
+NORTHWIND — DAX MEASURES
 ==========================
 
 -- 1. Total Sales
@@ -54,19 +54,4 @@ MAXX(
 Total Products =
 DISTINCTCOUNT('Products'[ProductID])
 
--- 10.  Gross Profit (optional depending on your dataset)
--- If you imported Discount:
-Gross Profit =
-SUMX(
-    'Order Details',
-    ('Order Details'[UnitPrice] * (1 - 'Order Details'[Discount])) *
-    'Order Details'[Quantity]
-)
 
--- 11.  Discount Amount (optional)
-Discount Amount =
-SUMX(
-    'Order Details',
-    ('Order Details'[UnitPrice] * 'Order Details'[Quantity]) *
-    'Order Details'[Discount]
-)
